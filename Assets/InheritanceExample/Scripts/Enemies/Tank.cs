@@ -6,27 +6,27 @@ public class Tank : EnemyBase
 {
 
 
-    protected override void OnHit()
+    public float reduceSpeed = 0;
+    public float recoverSpeed = .05f;
+
+    private void Update()
     {
-        Delay();
-        //MoveSpeed *= 0;
-        //Invoke(MoveSpeed, 1);
-
-        void Delay()
-        {
-            MoveSpeed *= 0;
-        }
-
-        void Resume()
-        {
-             MoveSpeed *= 1;
-        }
-
        
-
     }
 
-   
+    protected override void OnHit()
+    {
 
+        StartCoroutine(Delay());
 
+        IEnumerator Delay()
+        {
+
+            MoveSpeed = reduceSpeed;
+
+            yield return new WaitForSeconds(1F);
+
+            MoveSpeed = recoverSpeed;
+        }
+    }
 }

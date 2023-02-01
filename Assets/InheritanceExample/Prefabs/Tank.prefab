@@ -359,7 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8433aff87cbf6634b9630c631a2d286d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 8
   _deathSound: {fileID: 8300000, guid: 3e3e3e5716c2533409755571490cc2c4, type: 3}
   _hitSound: {fileID: 8300000, guid: eeb3bcaf9a1e08b4ca2540b8b4157f6b, type: 3}
   MoveSpeed: 0.05
+  reduceSpeed: 0
+  recoverSpeed: 0.05
