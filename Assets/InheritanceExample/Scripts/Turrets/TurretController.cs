@@ -8,7 +8,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] private List<Turret> _turrets = new List<Turret>();
     [SerializeField] private GameObject _aimIndicator;
 
-    public float FireCooldown { get; set; } = .5f;
+    public float FireCooldown { get; set; } = .5f; //.5f
 
     public bool IsReadyToFire { get; private set; } = true;
 

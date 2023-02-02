@@ -11,6 +11,8 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private AudioClip _hitSound;
     [SerializeField] protected float MoveSpeed = .05f;
 
+    public PowerUpSpawnBase powerUPS;//added 
+
     protected abstract void OnHit();
 
     protected Rigidbody RB { get; private set; }
@@ -47,7 +49,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     public virtual void Kill()
     {
+
+
         AudioHelper.PlayClip2D(_deathSound, 1, .1f);
         gameObject.SetActive(false);
+
+
+
     }
 }

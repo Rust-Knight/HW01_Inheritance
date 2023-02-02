@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PowerUpBase : MonoBehaviour
 {
-    public float multiplier = 1f;
+    public float multiplier = .5f;
+    public TurretController playerContoller;
+    void Start()
+    {
+        playerContoller = GameObject.FindObjectOfType<TurretController>(); // finds TurretController script for use! 
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,17 +21,21 @@ public class PowerUpBase : MonoBehaviour
 
         IEnumerator Pickup()
         {
-            TurretController firechange = GetComponent<TurretController>();
-            //firechange.FireCooldown *= multiplier;
+
+            
+            playerContoller.FireCooldown = .25f; // Sets speed to .25 when hit with bullet 
 
             //FireCooldown *= 2;
-            Debug.Log("PowerUp is Acctive");
+            Debug.Log("PowerUp is disabled");
 
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false; // Truns off MeshRenderer
+            GetComponent<Collider>().enabled = false; // Turn off Collider still lets the power up eneabled 
+
             yield return new WaitForSeconds(2);
 
-            Debug.Log("PowerUp is DeAcctive");
+            playerContoller.FireCooldown = multiplier; // return to normal shoting speed
+
+            Debug.Log("PowerUp is enabled");
             
             Destroy(gameObject);
             
