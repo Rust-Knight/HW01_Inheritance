@@ -26,7 +26,7 @@ public class PowerUpBase : MonoBehaviour
             playerContoller.FireCooldown = .25f; // Sets speed to .25 when hit with bullet 
 
             //FireCooldown *= 2;
-            Debug.Log("PowerUp is disabled");
+            Debug.Log("PowerUp is enabled");
 
             GetComponent<MeshRenderer>().enabled = false; // Truns off MeshRenderer
             GetComponent<Collider>().enabled = false; // Turn off Collider still lets the power up eneabled 
@@ -35,7 +35,7 @@ public class PowerUpBase : MonoBehaviour
 
             playerContoller.FireCooldown = multiplier; // return to normal shoting speed
 
-            Debug.Log("PowerUp is enabled");
+            Debug.Log("PowerUp is disabled");
             
             Destroy(gameObject);
             

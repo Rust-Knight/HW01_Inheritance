@@ -7,9 +7,9 @@ public class PowerUpSpawnBase : MonoBehaviour
 
     [SerializeField] 
 
-    private GameObject PowerUP;
+    private GameObject PowerUP; // prefab reference game object
 
-    public Transform spawnPoint;
+    public Transform spawnPoint; // The position of spawn location for prefab
 
     void Start()
     {
@@ -19,10 +19,7 @@ public class PowerUpSpawnBase : MonoBehaviour
    
     public void SpawnPowerUP()
     {
-
-        //GameObject newObject = Instantiate(PowerUP);
-        Instantiate(PowerUP, spawnPoint.position, spawnPoint.rotation);
-        
+        Instantiate(PowerUP, spawnPoint.position, spawnPoint.rotation); // Use position and rotation of gameObject for assign to location of prefab 
 
     }
 

@@ -24,7 +24,7 @@ public class Tank : EnemyBase
 
             MoveSpeed = reduceSpeed;
 
-            yield return new WaitForSeconds(1F);
+            yield return new WaitForSeconds(1F); // This stops the tank from moving for one 1F can be changed if needed
 
             MoveSpeed = recoverSpeed;
         }
